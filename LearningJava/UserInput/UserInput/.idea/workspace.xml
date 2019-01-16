@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40497d66-c0a2-4299-975f-9ff33c644bbd" name="Default Changelist" comment="" />
+    <list default="true" id="e9d42f7a-86b5-4d26-ae09-cf4cc531ab4d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Varables/Varables/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Varables/Varables/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,13 +16,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+            <state relative-caret-position="171">
+              <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
               <folding>
-                <element signature="e#166#167#0" expanded="true" />
-                <element signature="e#190#191#0" expanded="true" />
-                <element signature="e#258#259#0" expanded="true" />
-                <element signature="e#294#295#0" expanded="true" />
+                <element signature="e#346#347#0" expanded="true" />
+                <element signature="e#452#453#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -49,9 +49,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="RunDashboard">
@@ -69,7 +69,7 @@
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
-      <module name="Varables" />
+      <module name="UserInput" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -88,16 +88,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="40497d66-c0a2-4299-975f-9ff33c644bbd" name="Default Changelist" comment="" />
-      <created>1547670742478</created>
+      <changelist id="e9d42f7a-86b5-4d26-ae09-cf4cc531ab4d" name="Default Changelist" comment="" />
+      <created>1547671603366</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1547670742478</updated>
+      <updated>1547671603366</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="784" height="832" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="UI Designer" />
@@ -111,7 +112,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -126,13 +127,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+        <state relative-caret-position="171">
+          <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
           <folding>
-            <element signature="e#166#167#0" expanded="true" />
-            <element signature="e#190#191#0" expanded="true" />
-            <element signature="e#258#259#0" expanded="true" />
-            <element signature="e#294#295#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
+            <element signature="e#452#453#0" expanded="true" />
           </folding>
         </state>
       </provider>
