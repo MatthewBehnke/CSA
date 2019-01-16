@@ -7,6 +7,7 @@ public class Main {
     }
 
     public static void printToConsole() {
+
         System.out.println("Some Text");
     }
 }
