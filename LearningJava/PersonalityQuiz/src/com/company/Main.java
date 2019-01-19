@@ -99,5 +99,4 @@ class Quiz {
     private String ReadAndSanitise(Scanner scanner) {
         return scanner.nextLine().toLowerCase();
     }
-
 }
