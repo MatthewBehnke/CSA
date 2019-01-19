@@ -7,16 +7,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //Create a new Scanner
-        Scanner userInputScanner = new Scanner(System.in);
+        Quiz wizardQuiz = new Quiz();
 
-        Quiz myQuiz = new Quiz(userInputScanner);
+        wizardQuiz.askAQuestion("Have you ever wanted to be a wizard", true);
+        wizardQuiz.askAQuestion("Do you have a wand", true);
 
-        myQuiz.firstQuestion();
-        myQuiz.secondQuestion();
-        myQuiz.thirdQuestion();
-        myQuiz.fourthQuestion();
-        myQuiz.endOfQuiz();
+        wizardQuiz.askAQuestion("Do you know what quidditch is", true);
+        wizardQuiz.askAQuestion("Do you like foot ball", false);
+
+        wizardQuiz.endOfQuiz("You are a wizard Harry", "But sorry dude you are still a Muggle");
 
     }
 }
@@ -24,11 +23,46 @@ public class Main {
 class Quiz {
 
     private Scanner inputScanner;
-    private int wizard;
-    private int muggle;
+    private int typeZero;
+    private int typeOne;
 
-    public Quiz(Scanner InputScanner) {
-        inputScanner = InputScanner;
+    public Quiz() {
+        inputScanner = new Scanner(System.in);
+    }
+
+    public void askAQuestion(String question, boolean isZeroCorrect) {
+        System.out.println(question);
+        String userResponse = ReadAndSanitise(inputScanner);
+
+        if (isYes(userResponse)) {
+            addCount(isZeroCorrect, true);
+        } else if (isNo(userResponse)) {
+            addCount(isZeroCorrect, false);
+        } else {
+            System.out.println("Sorry I do not understand");
+            askAQuestion(question, isZeroCorrect);
+        }
+    }
+
+    public void endOfQuiz(String zeroMessage, String oneMessage){
+        System.out.println("Congrats you made it to the end of the quiz");
+        if (isTypeZero()) {
+            System.out.println(zeroMessage);
+        } else {
+            System.out.println(oneMessage);
+        }
+    }
+
+    private void addCount(boolean isZeroCorrect, boolean response) {
+        if (isZeroCorrect && response) {
+            typeZero = typeZero + 1;
+        } else if (isZeroCorrect) {
+            typeOne = typeOne + 1;
+        } else if (response) {
+            typeZero =  typeZero + 1;
+        } else {
+            typeOne = typeOne + 1;
+        }
     }
 
     private boolean isYes(String input) {
@@ -55,8 +89,8 @@ class Quiz {
         return Arrays.stream(noArray).anyMatch(input.toLowerCase()::equals);
     }
 
-    private boolean isWizard() {
-        if (wizard >= muggle) {
+    private boolean isTypeZero() {
+        if (typeZero >= typeOne) {
             return true;
         }
         return false;
@@ -66,53 +100,4 @@ class Quiz {
         return scanner.nextLine().toLowerCase();
     }
 
-    private String askQuestion(String question, boolean isTrue) {
-        System.out.println(question);
-        String userResponse = ReadAndSanitise(inputScanner);
-
-        if (isTrue && isYes())
-
-    }
-
-
-    public void firstQuestion() {
-        System.out.println("Next Question...");
-        System.out.println("Have you ever wanted to be a wizard");
-        String userResponse = ReadAndSanitise(inputScanner);
-        if (isYes(userResponse)) { wizard++; }
-        else { muggle++; }
-    }
-
-    public void secondQuestion() {
-        System.out.println("Next Question...");
-        System.out.println("Do you have a wand");
-        String userResponse = ReadAndSanitise(inputScanner);
-        if (isYes(userResponse)) { wizard++; }
-        else { muggle++; }
-    }
-
-    public void thirdQuestion() {
-        System.out.println("Next Question...");
-        System.out.println("Do you know what quidditch is");
-        String userResponse = ReadAndSanitise(inputScanner);
-        if (isYes(userResponse)) { wizard++; }
-        else { muggle++; }
-    }
-
-    public void fourthQuestion() {
-        System.out.println("Next Question...");
-        System.out.println("Do you like foot ball");
-        String userResponse = ReadAndSanitise(inputScanner);
-        if (isYes(userResponse)) { muggle++; }
-        else { wizard++; }
-    }
-
-    public void endOfQuiz(){
-        System.out.println("Congrats you made it to the end of the quiz");
-        if (isWizard()) {
-            System.out.println("You are a wizard Harry");
-        } else {
-            System.out.println("But sorry dude you are still a Muggle");
-        }
-    }
 }
