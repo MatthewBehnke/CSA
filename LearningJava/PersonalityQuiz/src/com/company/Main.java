@@ -72,7 +72,7 @@ class Quiz {
                              "yeppers", "right on", "ja", "surely",
                              "amen", "fo' shizze", "totally", "sure",
                              "yes sir", "okay", "right", "absolutely",
-                             "si", "oui"};
+                             "si", "oui", "true"};
 
         return Arrays.stream(yesArray).anyMatch(input.toLowerCase()::equals);
     }
@@ -84,7 +84,7 @@ class Quiz {
                 "out of the question", "no sir", "for foul nor fair", "not on your life",
                 "not on your nelly", "not on ypur tinytype", "not for all the tea in China", "not in a million years",
                 "under no circumstances", "not likely", "not for joe", "thumbs down",
-                "not a cat in hell chance", "fat chance", "catch me!", "no fear", "go fish"};
+                "not a cat in hell chance", "fat chance", "catch me!", "no fear", "go fish", "false"};
 
         return Arrays.stream(noArray).anyMatch(input.toLowerCase()::equals);
     }
@@ -92,8 +92,9 @@ class Quiz {
     private boolean isTypeZero() {
         if (typeZero >= typeOne) {
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
     private String ReadAndSanitise(Scanner scanner) {
