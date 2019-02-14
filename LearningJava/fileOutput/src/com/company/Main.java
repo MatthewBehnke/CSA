@@ -13,7 +13,8 @@ public class Main {
         File f = new File("output.txt");
         FileWriter fr;
         fr = new FileWriter(f);
-        while(scan.nextLine() != "bye") {
+        String message = "";
+        while(!message.toLowerCase().contains("bye")) {
             System.out.println("he");
         }
         fr.write("Line one\n");
