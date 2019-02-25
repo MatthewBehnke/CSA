@@ -7,7 +7,7 @@ public class Item {
     private String description;
     private int quantity;
 
-    Item() {}
+    public Item() {}
 
     public Item(String name, double price, String description, int quantity){
         this.name = name;
@@ -16,38 +16,36 @@ public class Item {
         this.quantity = quantity;
     }
 
-    String getName() {
+    public String getName() {
         return this.name;
     }
 
-    void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    double getPrice() {
+    public double getPrice() {
         return this.price;
     }
 
-    void setPrice(double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
-    String getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
-    void setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    int getQuantity() {
+    public int getQuantity() {
         return this.quantity;
     }
 
-    void setQuantity(int quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
-
 
 }

@@ -1,4 +1,6 @@
-package com.me;
+package com.me.Database;
+
+import com.me.Item;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -6,14 +8,14 @@ import java.util.ArrayList;
 /*
  *  A class to interact with a database primarily getters and setters
  */
-class Database {
+public class Database {
 
     /*
      * Create a new database
      *
      *  @param fileName
      */
-    static void createNewDatabase(String fileName) {
+    public static void createNewDatabase(String fileName) {
         String url = "jdbc:sqlite:" + fileName;
 
         try (Connection conn = DriverManager.getConnection(url)) {
@@ -34,7 +36,7 @@ class Database {
      * @param fileName
      * @param sql
      */
-     static void createNewTable(String fileName, String sql) {
+    public static void createNewTable(String fileName, String sql) {
         // SQLite connection string
         String url = "jdbc:sqlite:"+ fileName;
 
@@ -56,7 +58,7 @@ class Database {
      * @param description
      * @param quantity
      */
-    void warehouseInsert(String fileName, String name, double price, String description, int quantity) {
+    public void warehouseInsert(String fileName, String name, double price, String description, int quantity) {
         String sql = "INSERT INTO warehouses(name, price, description, quantity) VALUES(?,?,?,?)";
 
         try (Connection conn = this.connect(fileName);
@@ -76,7 +78,7 @@ class Database {
      *
      * @param fileName
      */
-    ArrayList<Item> selectAllFromWarehouses(String fileName) {
+    public ArrayList<Item> selectAllFromWarehouses(String fileName) {
         String sql = "SELECT name, price, description, quantity FROM warehouses";
 
         ArrayList<Item> items = new ArrayList<>();
@@ -114,7 +116,7 @@ class Database {
      * @param description
      * @param quantity
      */
-    void updateWarehouses(String fileName, int id, String name, double price, String description, int quantity) {
+    public void updateWarehouses(String fileName, int id, String name, double price, String description, int quantity) {
         String sql = "UPDATE warehouses SET name = ? , "
                 + "price = ?, "
                 + "description = ?,"
@@ -145,7 +147,7 @@ class Database {
      * @param id
      */
 
-    void deleteWarehouses(String fileName, int id) {
+    public void deleteWarehouses(String fileName, int id) {
         String sql = "DELETE FROM warehouses WHERE id = ?";
 
         try (Connection conn = this.connect(fileName);
@@ -156,6 +158,16 @@ class Database {
             // execute the delete statement
             pstmt.executeUpdate();
 
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void dropWarehouses(String fileName) {
+        String sql = "DROP TABLE IF EXISTS 'warehouses'";
+        try (Connection conn = this.connect(fileName);
+              Statement stmt = conn.createStatement()) {
+            stmt.executeUpdate(sql);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

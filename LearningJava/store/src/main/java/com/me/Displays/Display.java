@@ -1,8 +1,8 @@
-package com.me;
+package com.me.Displays;
 
-import java.awt.EventQueue;
+import com.me.Main;
+
 import java.awt.event.KeyEvent;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -46,7 +46,9 @@ public class Display extends JFrame {
         JMenuItem eResetItem = new JMenuItem("Rest");
         eResetItem.setMnemonic(KeyEvent.VK_C);
         eResetItem.setToolTipText("Rest Application");
-        eResetItem.addActionListener((event) -> System.out.println("Resetting the application"));
+        eResetItem.addActionListener((event) -> {
+            Main.reset();
+        });
 
         devTools.add(eResetItem);
         menubar.add(devTools);
