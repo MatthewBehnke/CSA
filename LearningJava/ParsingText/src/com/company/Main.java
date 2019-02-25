@@ -12,14 +12,14 @@ public class Main {
         song[3] = new Song("Californication","Red Hot Chili Peppers", 10.5,5143);
         song[4] = new Song("Feel Good Inc","Gorillaz", 10.5,25);
 
-        MediaFile.writeString("Title");
-        MediaFile.writeString("Author");
-        MediaFile.writeString("Rating");
+        OutputToFile.writeString("Title");
+        OutputToFile.writeString("Author");
+        OutputToFile.writeString("Rating");
         for(int i = 0; i < song.length; i++) {
-            MediaFile.writeString("\n" + song[i].getTitle());
-            MediaFile.writeString(song[i].getAuthor());
-            MediaFile.writeString(Integer.toString(song[i].getRating()));
+            OutputToFile.writeString("\n" + song[i].getTitle());
+            OutputToFile.writeString(song[i].getAuthor());
+            OutputToFile.writeString(Integer.toString(song[i].getRating()));
         }
-        MediaFile.saveAndClose();
+        OutputToFile.saveAndClose();
     }
 }
