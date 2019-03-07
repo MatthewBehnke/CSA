@@ -5,11 +5,11 @@ import java.util.ArrayList;
 public class Shopper {
 
     private String name;
-    private int balance;
+    private double balance;
     private ArrayList<Item> cart;
+    private double cost;
 
-
-    public Shopper(String name, int balance) {
+    public Shopper(String name, double balance) {
         this.name = name;
         this.balance = balance;
         cart = new ArrayList<>();
@@ -20,7 +20,19 @@ public class Shopper {
         return name + " : " + balance;
     }
 
-    
+    public void buy(ArrayList<Item> availableItems, Item item) {
+        int index = availableItems.indexOf(item);
+        availableItems.get(index).setQuantity(availableItems.get(index).getQuantity() - 1);
+        cart.add(item);
+    }
+
+    public double calculateCost() {
+        cart.forEach(n ->
+                cost = cost + n.getPrice()
+        );
+        return cost;
+    }
+
     public ArrayList<Item> getCart() { return cart; }
 
     public void setCart(ArrayList<Item> item) { this.cart = item; }
@@ -33,11 +45,11 @@ public class Shopper {
         this.name = name;
     }
 
-    public int getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 }

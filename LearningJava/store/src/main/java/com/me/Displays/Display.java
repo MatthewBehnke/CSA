@@ -1,7 +1,5 @@
 package com.me.Displays;
 
-import com.me.Main;
-
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -46,9 +44,9 @@ public class Display extends JFrame {
         JMenuItem eResetItem = new JMenuItem("Rest");
         eResetItem.setMnemonic(KeyEvent.VK_C);
         eResetItem.setToolTipText("Rest Application");
-        eResetItem.addActionListener((event) -> {
-            Main.reset();
-        });
+//        eResetItem.addActionListener((event) -> {
+//            Main.reset();
+//        });
 
         devTools.add(eResetItem);
         menubar.add(devTools);

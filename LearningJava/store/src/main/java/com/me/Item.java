@@ -6,6 +6,7 @@ public class Item {
     private double price;
     private String description;
     private int quantity;
+    private int id;
 
     public Item() {}
 
@@ -14,6 +15,24 @@ public class Item {
         this.price = price;
         this.description = description;
         this.quantity = quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", quantity=" + quantity +
+                '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

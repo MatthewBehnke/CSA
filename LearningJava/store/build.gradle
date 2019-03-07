@@ -8,7 +8,7 @@ configurations {
 
 jar {
     manifest {
-        attributes 'Main-Class': 'com.me.Main' // entry point
+        attributes 'Main-Class': 'com.me.StoreRunner' // entry point
     }
     from {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }

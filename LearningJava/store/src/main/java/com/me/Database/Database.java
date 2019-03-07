@@ -91,12 +91,11 @@ public class Database {
             while (rs.next()) {
                 Item item = new Item();
 
+//                item.setId(rs.get("id"));
                 item.setName(rs.getString("name"));
                 item.setPrice(rs.getDouble("price"));
                 item.setDescription(rs.getString("description"));
                 item.setQuantity(rs.getInt("quantity"));
-//                System.out.println("id:"+ rs.getString("id")+ ", name: "+ name + ", price: " + price + ", description: " + description);
-
                 items.add(item);
             }
         } catch (SQLException e) {
